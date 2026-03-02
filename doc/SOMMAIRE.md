@@ -20,6 +20,7 @@
 |---|---|
 | [Font & Positionnement](./02-mecaniques-core/font-et-positionnement.md) | Comment déplacer des éléments à l'écran en utilisant des polices custom |
 | [BossBar & Communication client](./02-mecaniques-core/bossbar.md) | Comment le plugin envoie le HUD au client sans mod |
+| [Shaders](./02-mecaniques-core/shaders.md) | Pourquoi et comment BetterHud utilise des shaders GLSL |
 | [Resource Pack](./02-mecaniques-core/resource-pack.md) | Format, structure et génération automatique du resource pack |
 
 ---
@@ -58,3 +59,4 @@
 3. **Le resource pack est généré automatiquement** — le plugin construit les fichiers JSON de police et les textures au démarrage.
 4. **Aucun mod client n'est requis** — tout fonctionne avec les mécaniques vanilla de Minecraft.
 5. **Chaque joueur a son propre état** — le rendu est individualisé par joueur.
+6. **Les shaders rendent la BossBar transparente** — sans eux, la barre de progression native s'affiche par-dessus le HUD.

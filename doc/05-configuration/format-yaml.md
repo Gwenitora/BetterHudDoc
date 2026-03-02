@@ -69,6 +69,28 @@ font.yml
 
 ---
 
+## `shader.yml` — Configuration des shaders
+
+Voir aussi : [Shaders — explication technique complète](../02-mecaniques-core/shaders.md)
+
+```
+shader.yml
+├── bar-color          : couleur de BossBar dont les textures seront remplacées
+│                        par des textures transparentes
+│                        Valeurs : pink, blue, red, green, yellow, purple, white
+│                        Défaut  : yellow
+│                        (les autres couleurs restent disponibles pour d'autres plugins)
+│
+└── disable-level-text : masquer le texte du niveau d'expérience affiché
+                         au-dessus de la barre d'XP ? (true/false)
+```
+
+> **Note** : BetterHud génère automatiquement les fichiers GLSL (`rendertype_text.vsh` et `.fsh`)
+> dans le resource pack à partir de ce fichier et de la configuration des HUDs.
+> Il n'est pas nécessaire d'écrire du code GLSL manuellement.
+
+---
+
 ## `database.yml` — Configuration base de données
 
 BetterHud peut stocker des données joueurs (HUDs activés, etc.) en base de données :
