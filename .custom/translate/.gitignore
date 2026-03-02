@@ -1,0 +1,12 @@
+target/
+*.class
+*.jar
+!*-shaded.jar
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+*.DS_Store

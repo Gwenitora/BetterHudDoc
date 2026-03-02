@@ -1,0 +1,11 @@
+# BetterHud Configuration
+debug: false
+debug-level: ASSETS
+tick-speed: 1
+auto-save-time: 6000
+bossbar-line: 1
+default-hud: []
+default-popup: []
+default-compass: []
+pack-type: ZIP
+merge-boss-bar: true

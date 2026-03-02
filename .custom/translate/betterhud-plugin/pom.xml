@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>kr.toxicity.hud</groupId>
+        <artifactId>betterhud-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>betterhud-plugin</artifactId>
+    <name>BetterHud Plugin</name>
+    <description>Bukkit JavaPlugin bootstrap – wires together all modules and produces the fat jar.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>kr.toxicity.hud</groupId>
+            <artifactId>betterhud-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>kr.toxicity.hud</groupId>
+            <artifactId>betterhud-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>kr.toxicity.hud</groupId>
+            <artifactId>betterhud-nms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Shade plugin: bundle all compile-scope deps into a single fat jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <artifactSet>
+                                <includes>
+                                    <include>kr.toxicity.hud:betterhud-api</include>
+                                    <include>kr.toxicity.hud:betterhud-core</include>
+                                    <include>kr.toxicity.hud:betterhud-nms</include>
+                                    <include>org.yaml:snakeyaml</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
